@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public class YellowBall : MonoBehaviour
 {
     private AudioSource source;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +16,11 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnMouseDown()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         source.Play();
         GameObject.Find("GameManager").GetComponent<GameManager>().ScoreUp();
         Destroy(gameObject);
