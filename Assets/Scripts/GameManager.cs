@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject winText;
-    public GameObject restartButton;
+    public GameObject winPanel;
     int score = 0;
 
+    private void Start()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -24,8 +28,7 @@ public class GameManager : MonoBehaviour
     }
     void Win()
     {
-        winText.SetActive(true);
-        restartButton.SetActive(true);
+        winPanel.SetActive(true);
     }
     public void Restart()
     {
