@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public AdController adController;
 
+    private float randomNumber;
     private void Start()
     {
 
@@ -35,7 +36,16 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        adController.ShowVideoAd();
-        SceneManager.LoadScene("Game");
+        randomNumber = UnityEngine.Random.Range(0f, 9f);
+        Debug.Log(randomNumber);
+        if(randomNumber <= 3)
+        {
+            adController.ShowVideoAd();
+            SceneManager.LoadScene("Game");
+        }
+        else
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }
