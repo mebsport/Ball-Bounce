@@ -20,9 +20,8 @@ public class YellowBall : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        source.Play();
-        GameObject.Find("GameManager").GetComponent<GameManager>().ScoreUp();
         Destroy(gameObject);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        GameObject.Find("GameManager").GetComponent<GameManager>().ScoreUp();
     }
 }

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject winPanel;
     int score = 0;
 
+    public AdController adController;
+
     private void Start()
     {
 
@@ -21,17 +23,19 @@ public class GameManager : MonoBehaviour
     public void ScoreUp()
     {
         score++;
-        if(score >=5)
+        if(score >=4)
         {
             Win();
         }
     }
     void Win()
     {
+        adController.ShowBannerAd();
         winPanel.SetActive(true);
     }
     public void Restart()
     {
+        adController.ShowVideoAd();
         SceneManager.LoadScene("Game");
     }
 }

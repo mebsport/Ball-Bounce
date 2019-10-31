@@ -19,7 +19,6 @@ public class Ball : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        source.Play();
         GameObject.Find("GameManager").GetComponent<GameManager>().ScoreUp();
         Destroy(gameObject);
     }

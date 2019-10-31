@@ -10,15 +10,38 @@ public class AdController : MonoBehaviour
     private string video_ad = "video";
     private string banner_ad = "GameBanner";
 
-    // Start is called before the first frame update
     void Start()
     {
         Monetization.Initialize(store_id, true);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public void ShowVideoAd()
+    {
+        if (Monetization.IsReady(video_ad))
+        {
+            ShowAdPlacementContent ad = null;
+            ad = Monetization.GetPlacementContent(video_ad) as ShowAdPlacementContent;
+
+            if (ad != null)
+            {
+                ad.Show();
+            }
+        }
+    }
+    public void ShowBannerAd()
+    {
+        if (Monetization.IsReady(banner_ad))
+        {
+            ShowAdPlacementContent ad = null;
+            ad = Monetization.GetPlacementContent(banner_ad) as ShowAdPlacementContent;
+
+            if (ad != null)
+            {
+                ad.Show();
+            }
+        }
     }
 }
