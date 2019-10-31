@@ -12,7 +12,7 @@ public class AdController : MonoBehaviour
 
     void Start()
     {
-        Monetization.Initialize(store_id, true);
+        Monetization.Initialize(store_id, false);
     }
     void Update()
     {
