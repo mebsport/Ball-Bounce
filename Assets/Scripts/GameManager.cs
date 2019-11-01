@@ -32,14 +32,13 @@ public class GameManager : MonoBehaviour
     }
     void Win()
     {
-        adController.ShowBannerAd();
         winPanel.SetActive(true);
     }
     public void Restart()
     {
-        randomNumber = UnityEngine.Random.Range(0f, 9f);
+        randomNumber = UnityEngine.Random.Range(0f, 10f);
         Debug.Log(randomNumber);
-        if(randomNumber <= 3)
+        if(randomNumber <= 4)
         {
             adController.ShowVideoAd();
             SceneManager.LoadScene("Game");
